@@ -4,7 +4,9 @@ import Board from "./Components/Board";
 function App() {
   return (
     <div className="container-fluid">
-      <Board />
+      <div className="row">
+        <Board />
+      </div>
     </div>
   );
 }

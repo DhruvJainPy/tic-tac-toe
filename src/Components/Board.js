@@ -99,9 +99,9 @@ const Board = () => {
     }
   };
   return (
-    <div>
+    <div className="container-fluid">
       <div
-        className="row  d-md-flex justify-content-center align-items-center"
+        className="row d-flex justify-content-center align-items-center"
         style={{ height: "100vh" }}
       >
         <div className="text-center">
@@ -109,7 +109,7 @@ const Board = () => {
             Player's Turn: {player ? "O" : "X"}
           </p>
           <button
-            className="btn btn-outline-dark px-3 py-2 my-3"
+            className="btn btn-outline-dark px-3 py-2 my-2 my-md-3"
             onClick={() => {
               reset();
             }}
@@ -117,7 +117,7 @@ const Board = () => {
             Reset
           </button>
         </div>
-        <div className="col-4 border border-2 border-dark">
+        <div className="col-10 col-md-4 border border-2 border-dark">
           <div className="row text-center">
             {tiles.map((tile) => {
               return (
@@ -129,7 +129,7 @@ const Board = () => {
                   style={{ minHeight: "10vh" }}
                 >
                   <button
-                    className="bg-transparent border-0 h-100 w-100"
+                    className="bg-transparent border-0 h-100 w-100 text-center"
                     disabled={tile.value !== ""}
                     key={tile.id}
                     onClick={() => handleTurn(tile)}
