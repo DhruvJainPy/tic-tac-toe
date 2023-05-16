@@ -107,14 +107,13 @@ const Board = () => {
         <div className="text-center d-md-flex justify-content-md-center">
           <button
             className={`btn ${
-              player ? "btn-success" : "btn-danger"
-            }  my-2 my-md-3 mx-2 mx-md-3`}
-            disabled={true}
+              player ? "btn-success" : "btn-light"
+            }  my-2 my-md-3 mx-2 mx-md-3 fw-bold`}
           >
             Player O
           </button>
           <button
-            className="btn btn-dark  my-2 my-md-3 mx-2 mx-md-3"
+            className="btn btn-outline-dark  my-2 my-md-3 mx-2 mx-md-3"
             onClick={() => {
               reset();
             }}
@@ -123,9 +122,8 @@ const Board = () => {
           </button>
           <button
             className={`btn ${
-              !player ? "btn-success" : "btn-danger"
-            }  my-2 my-md-3 mx-2 mx-md-3`}
-            disabled={true}
+              !player ? "btn-success" : "btn-light"
+            }  my-2 my-md-3 mx-2 mx-md-3 fw-bold`}
           >
             Player X
           </button>

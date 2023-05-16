@@ -20,3 +20,6 @@
 button:disabled {
   color: #f5f5f5;
 }
+.btn-success {
+  pointer-events: none;
+}
