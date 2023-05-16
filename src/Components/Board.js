@@ -104,32 +104,45 @@ const Board = () => {
         className="row d-flex justify-content-center align-items-center"
         style={{ height: "100vh" }}
       >
-        <div className="text-center">
-          <p className="p-2 display-4 text-center font-monospace">
-            Player's Turn: {player ? "O" : "X"}
-          </p>
+        <div className="text-center d-md-flex justify-content-md-center">
           <button
-            className="btn btn-outline-dark px-3 py-2 my-2 my-md-3"
+            className={`btn ${
+              player ? "btn-success" : "btn-danger"
+            }  my-2 my-md-3 mx-2 mx-md-3`}
+            disabled={true}
+          >
+            Player O
+          </button>
+          <button
+            className="btn btn-dark  my-2 my-md-3 mx-2 mx-md-3"
             onClick={() => {
               reset();
             }}
           >
             Reset
           </button>
+          <button
+            className={`btn ${
+              !player ? "btn-success" : "btn-danger"
+            }  my-2 my-md-3 mx-2 mx-md-3`}
+            disabled={true}
+          >
+            Player X
+          </button>
         </div>
-        <div className="col-10 col-md-4 border border-2 border-dark">
+        <div className="col-10 col-md-4">
           <div className="row text-center">
             {tiles.map((tile) => {
               return (
                 <div
-                  className={`col-4 display-1 p-1 p-md-2 ${
+                  className={`col-4 display-1 bg-dark text-white p-1 p-md-2 ${
                     tile.id > 6 ? "border1 border-bottom-0" : "border1"
                   } ${tile.id % 3 === 0 ? "border-end-0" : ""}`}
                   key={tile.id}
                   style={{ minHeight: "10vh" }}
                 >
                   <button
-                    className="bg-transparent border-0 h-100 w-100 text-center"
+                    className="bg-dark text-white border-0 h-100 w-100 text-center"
                     disabled={tile.value !== ""}
                     key={tile.id}
                     onClick={() => handleTurn(tile)}
@@ -147,19 +160,19 @@ const Board = () => {
         id="exampleModal"
         tabIndex="-1"
       >
-        <div className="modal-dialog">
+        <div className="modal-dialog mx-4 mx-md-auto">
           <div
-            className="modal-content p-3 bg-dark text-white shadow-lg"
-            style={{ width: "25rem" }}
+            className="modal-content text-center p-3 border-dark shadow-lg"
+            style={{ minWidth: "20rem", maxWidth: "25rem" }}
           >
-            <div className="modal-header">
+            <div className="modal-header border-dark">
               <img src={logo} alt="" className="mx-3" />
               <h5 className="modal-title" id="exampleModalLabel">
                 Tic-Tac-Toe
               </h5>
               <button
                 type="button"
-                className="btn-close btn-close-white"
+                className="btn-close"
                 onClick={() => reset()}
               ></button>
             </div>
@@ -170,7 +183,7 @@ const Board = () => {
             </div>
             <button
               type="button"
-              className="btn btn-light"
+              className="btn btn-dark"
               onClick={() => reset()}
             >
               Reset
